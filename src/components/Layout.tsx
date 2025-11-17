@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,47 +17,52 @@ export default function Layout({ children }: LayoutProps) {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
-            <motion.a
-              href="/"
-              className="text-2xl font-serif font-bold text-gradient"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-              Brew Guide
-            </motion.a>
+            <Link to="/">
+              <motion.div
+                className="text-2xl font-serif font-bold text-gradient cursor-pointer"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
+                Brew Guide
+              </motion.div>
+            </Link>
             <div className="hidden md:flex space-x-8">
-              <motion.a
-                href="/"
-                className="text-coffee-espresso hover:text-coffee-medium transition-colors"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                Home
-              </motion.a>
-              <motion.a
-                href="/v60"
-                className="text-coffee-espresso hover:text-coffee-medium transition-colors"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                V60
-              </motion.a>
-              <motion.a
-                href="/flair-espresso"
-                className="text-coffee-espresso hover:text-coffee-medium transition-colors"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                Flair Espresso
-              </motion.a>
-              <motion.a
-                href="/moka-pot"
-                className="text-coffee-espresso hover:text-coffee-medium transition-colors"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                Moka Pot
-              </motion.a>
+              <Link to="/">
+                <motion.div
+                  className="text-coffee-espresso hover:text-coffee-medium transition-colors cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  Home
+                </motion.div>
+              </Link>
+              <Link to="/v60">
+                <motion.div
+                  className="text-coffee-espresso hover:text-coffee-medium transition-colors cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  V60
+                </motion.div>
+              </Link>
+              <Link to="/flair-espresso">
+                <motion.div
+                  className="text-coffee-espresso hover:text-coffee-medium transition-colors cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  Flair Espresso
+                </motion.div>
+              </Link>
+              <Link to="/moka-pot">
+                <motion.div
+                  className="text-coffee-espresso hover:text-coffee-medium transition-colors cursor-pointer"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  Moka Pot
+                </motion.div>
+              </Link>
             </div>
           </div>
         </div>
