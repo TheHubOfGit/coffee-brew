@@ -1,73 +1,111 @@
-# React + TypeScript + Vite
+# Coffee Brewing Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A comprehensive web application for learning and mastering manual coffee brewing techniques. This guide provides step-by-step instructions, interactive timers, and detailed recipes for three popular brewing methods.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Three Brewing Methods:**
+  - **V60 Pour-Over** - Single cup precision brewing with James Hoffmann's technique
+  - **Flair Espresso** - Manual lever espresso with precise pressure control
+  - **Moka Pot** - Classic stovetop brewing for rich, bold coffee
 
-## React Compiler
+- **Interactive Tools:**
+  - Step-by-step brewing guides with detailed instructions
+  - Built-in timers for each brewing phase
+  - Coffee-to-water ratio calculator
+  - Difficulty ratings and time estimates
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Comprehensive Information:**
+  - Equipment lists for each method
+  - Detailed recipes with precise measurements
+  - Tips and troubleshooting advice
+  - Flavor profiles and best use cases
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** with TypeScript
+- **Vite** for fast development and building
+- **React Router** for navigation
+- **Tailwind CSS** for styling
+- **Motion** (Framer Motion) for animations
+- **Font Awesome** for icons
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/TheHubOfGit/coffee-brew.git
+cd coffee-brew
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory.
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+coffee-brewing-guide/
+├── src/
+│   ├── components/      # Reusable React components
+│   │   ├── DifficultyBadge.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Layout.tsx
+│   │   ├── MethodCard.tsx
+│   │   ├── RatioCalculator.tsx
+│   │   ├── SidebarNav.tsx
+│   │   ├── StepGuide.tsx
+│   │   └── Timer.tsx
+│   ├── data/            # Brewing method data
+│   │   └── brewingMethods.ts
+│   ├── pages/           # Page components
+│   │   ├── Home.tsx
+│   │   ├── V60.tsx
+│   │   ├── FlairEspresso.tsx
+│   │   └── MokaPot.tsx
+│   ├── App.tsx          # Main app component
+│   └── main.tsx         # Entry point
+├── public/              # Static assets
+└── dist/                # Build output
+```
+
+## Deployment
+
+This project is configured for deployment on Cloudflare Pages (see `wrangler.toml`). The build process generates static files that can be deployed to any static hosting service.
+
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests.
+
+## License
+
+This project is open source and available for personal and educational use.
